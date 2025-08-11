@@ -1,0 +1,113 @@
+body {
+    background: #f9f9f9;
+    margin: 0;
+    padding: 1vw;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 2px 4px 8px 4px;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+li > .todo_info {
+    flex: 1;
+}
+
+li > .todo_actions {
+    flex: 0 0 20%;
+    text-align: right;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.todo_input,
+#todo_list,
+#done_list {
+    border: 2px solid #ddd;
+}
+
+section {
+    padding: 8px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 첫 번째 section: 100% 폭 */
+main > section:first-of-type {
+    flex: 1 1 100%;
+}
+
+/* 나머지 section은 폭 지정 */
+main > section:not(:first-of-type) {
+    flex: 1;
+}
+
+/* 가운데 moves 버튼 영역 크기 */
+main > section.moves_btn {
+    flex: 0 0 60px;
+}
+
+
+.todo_input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.top_row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#todo_txt {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.btn_row {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 끝 정렬 */
+}
+
+
+.moves_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.moves_btn .btn {
+  margin: 4px 0;  
+}
+
+
+
