@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Todo</title>
+<title>Todo List</title>
 <link href="style.css" rel="stylesheet" />
 </head>
 <body>
 
 <main>
     <section class="todo_input">
-        <h3>작업등록</h3>
+        <h3>작업 등록</h3>
         <div class="top_row">
             <label for="todo_date" class="title">요청일</label>
             <input id="todo_date" type="date">
         </div>
-        <textarea name="todo_txt" id="todo_txt" rows="5"></textarea>
+        <textarea name="todo_txt" id="todo_txt" rows="4" placeholder="작업 내용을 입력하세요"></textarea>
         <div class="btn_row">
             <button class="btn btn_register">등록</button>
         </div>
     </section>
 
     <section class="todo">
-        <h3>작업목록</h3>
+        <h3>작업 목록</h3>
         <ul id="todo_list">
-            <li>
-                <input type="checkbox" name="" id="todo3">
+            <li data-order="3">
+                <input type="checkbox" id="todo3">
                 <div class="todo_info">
                     <label for="todo3">
                         <span>2025-08-11</span>
@@ -34,11 +34,11 @@
                 </div>
                 <div class="todo_actions">
                     <button class="btn">U</button>
-                    <button class="btn">X</button>
+                    <button class="btn btn-delete">X</button>
                 </div>
             </li>
-            <li>
-                <input type="checkbox" name="" id="todo2">
+            <li data-order="2">
+                <input type="checkbox" id="todo2">
                 <div class="todo_info">
                     <label for="todo2">
                         <span>2025-08-10</span>
@@ -47,22 +47,22 @@
                 </div>
                 <div class="todo_actions">
                     <button class="btn">U</button>
-                    <button class="btn">X</button>
+                    <button class="btn btn-delete">X</button>
                 </div>
             </li>
         </ul>
     </section>
 
     <section class="moves_btn">
-        <button class="btn moves" data-move="done">&gt;</button>
-        <button class="btn moves" data-move="todo">&lt;</button>
+        <button id="btn_done" class="btn moves">&gt;</button>
+        <button id="btn_todo" class="btn moves">&lt;</button>
     </section>
 
     <section class="done">
-        <h3>완료목록</h3>
+        <h3>완료 목록</h3>
         <ul id="done_list">
-            <li>
-                <input type="checkbox" name="" id="todo1" checked readonly>
+            <li data-order="1">
+                <input type="checkbox" id="todo1" checked readonly>
                 <div class="todo_info">
                     <label for="todo1">
                         <span>2025-08-09</span>
@@ -70,30 +70,13 @@
                     </label>
                 </div>
                 <div class="todo_actions">
-                    <button class="btn">X</button>
+                    <button class="btn btn-delete">X</button>
                 </div>
             </li>
         </ul>
     </section>
-
 </main>
 
-<script>
-
-    function initDate(){
-        const today = new Date();
-        const yyyy = today.getFullYear();
-        const mm = String(today.getMonth() + 1).padStart(2, '0');
-        const dd = String(today.getDate()).padStart(2, '0');
-        document.getElementById('todo_date').value = `${yyyy}-${mm}-${dd}`;
-    }
-
-    const btn = document.querySelector('.btn_register');
-    //btn.addEventListener('click', addTodoItem);
-
-    initDate();
-
-</script>
-
+<script src="app.js"></script>
 </body>
 </html>

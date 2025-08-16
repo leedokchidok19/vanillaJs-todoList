@@ -2,40 +2,45 @@ body {
     background: #f9f9f9;
     margin: 0;
     padding: 1vw;
+    font-family: sans-serif;
 }
 
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 li {
-    padding: 2px 4px 8px 4px;
+    padding: 8px 4px;
     border-bottom: 2px solid #ddd;
     display: flex;
-    justify-content: space-between;
-}
-
-li > .todo_info {
-    flex: 1;
-}
-
-li > .todo_actions {
-    flex: 0 0 20%;
-    text-align: right;
+    align-items: flex-start;
+    gap: 8px;
 }
 
 li:last-child {
     border-bottom: none;
 }
 
+.todo_info {
+    flex: 1;
+}
+
+.todo_actions {
+    flex-shrink: 0;
+    display: flex;
+    gap: 4px;
+}
+
 button {
-    padding: 8px 12px;
+    padding: 6px 10px;
     border: none;
     background: #007bff;
     color: #fff;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 0.9rem;
 }
 
 button:hover {
@@ -43,12 +48,11 @@ button:hover {
 }
 
 .todo_input,
-#todo_list,
-#done_list {
+.todo,
+.done {
     border: 2px solid #ddd;
-}
-
-section {
+    background: #fff;
+    border-radius: 6px;
     padding: 8px;
 }
 
@@ -58,26 +62,24 @@ main {
     gap: 20px;
 }
 
-/* 첫 번째 section: 100% 폭 */
 main > section:first-of-type {
     flex: 1 1 100%;
 }
 
-/* 나머지 section은 폭 지정 */
 main > section:not(:first-of-type) {
     flex: 1;
 }
 
-/* 가운데 moves 버튼 영역 크기 */
 main > section.moves_btn {
     flex: 0 0 60px;
-}
-
-
-.todo_input {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.moves_btn .btn {
+    margin: 4px 0;
 }
 
 .top_row {
@@ -94,20 +96,10 @@ main > section.moves_btn {
 
 .btn_row {
     display: flex;
-    justify-content: flex-end; /* 오른쪽 끝 정렬 */
+    justify-content: flex-end;
 }
 
-
-.moves_btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#done_list li.selected {
+    background-color: #fffae6;
+    border: 2px solid #ffcc00;
 }
-
-.moves_btn .btn {
-  margin: 4px 0;  
-}
-
-
-
