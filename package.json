@@ -1,0 +1,63 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "Simple Todo Application built with Electron",
+  "main": "main.js",
+  "author": "Your Name",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron .",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "build-mac": "electron-builder --mac",
+    "build-linux": "electron-builder --linux",
+    "pack": "electron-packager . todo-app --platform=win32 --arch=x64 --overwrite --out=dist/",
+    "clean": "rimraf dist/ build/"
+  },
+  "build": {
+    "appId": "com.yourcompany.todoapp",
+    "productName": "Todo App",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "app.js",
+      "index.html",
+      "style.css",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^30.5.1",
+    "electron-builder": "^24.6.4",
+    "electron-packager": "^17.1.1",
+    "rimraf": "^5.0.1"
+  }
+}
