@@ -1,9 +1,9 @@
 {
-  "name": "todo-app",
-  "version": "1.0.0",
+  "name": "todo-list",
+  "version": "1.0.1",
   "description": "Simple Todo Application built with Electron",
   "main": "main.js",
-  "author": "Your Name",
+  "author": "leedokchidok",
   "license": "MIT",
   "scripts": {
     "start": "electron .",
@@ -16,7 +16,7 @@
     "clean": "rimraf dist/ build/"
   },
   "build": {
-    "appId": "com.yourcompany.todoapp",
+    "appId": "io.leedokchidok.todoapp",
     "productName": "Todo App",
     "directories": {
       "output": "dist"
@@ -24,6 +24,7 @@
     "files": [
       "main.js",
       "app.js",
+      "storage.js",
       "index.html",
       "style.css",
       "package.json"
@@ -32,9 +33,7 @@
       "target": [
         {
           "target": "nsis",
-          "arch": [
-            "x64"
-          ]
+          "arch": ["x64"]
         }
       ],
       "icon": "assets/icon.ico"
@@ -55,9 +54,8 @@
     }
   },
   "devDependencies": {
-    "electron": "^30.5.1",
-    "electron-builder": "^24.6.4",
-    "electron-packager": "^17.1.1",
-    "rimraf": "^5.0.1"
-  }
+    "electron": "^30.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {}
 }
